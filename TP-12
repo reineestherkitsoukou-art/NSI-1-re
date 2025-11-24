@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Nov 24 11:15:21 2025
+
+@author: r.kitsoukou
+"""
+from __future__ import annotations
+from random import randint
+
+table_alea = [randint(0,1000) for _ in range(1000)]
+
+def recherche_seq_for(v:int, t:int) -> bool:
+    for x in t:
+        if x == v:
+            return True
+    return False
+
+def recherche_seq_while(v:int, t:int) -> bool:
+    i = 0
+    while i < len(t):
+        i+=1
+        if t[i]== v:
+            return True
+    return False
+
+def comparaison(recherche1:bool,recherche2:bool) -> bool:
+    for x in t:
+        if recherche1 == recherche2:
+            return True
+        else:
+            return x
