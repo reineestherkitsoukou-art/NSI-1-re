@@ -1,0 +1,12 @@
+from random import randint
+
+table_alea = [randint(0,1001) for _ in range(100)]
+
+def minimum(v:int,t:list[int]) -> int:
+    mini = t[0]
+    p = 1
+    while p < len(t):
+        if t[p] < mini:
+            mini = t[p]
+        p = p+1
+    return mini
