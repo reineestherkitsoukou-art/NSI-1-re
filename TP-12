@@ -1,31 +1,49 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 24 11:15:21 2025
-
-@author: r.kitsoukou
-"""
 from __future__ import annotations
 from random import randint
 
 table_alea = [randint(0,1000) for _ in range(1000)]
 
-def recherche_seq_for(v:int, t:int) -> bool:
+def recherche_seq_for(v:int, t:list[int]) -> bool:
     for x in t:
         if x == v:
             return True
     return False
 
-def recherche_seq_while(v:int, t:int) -> bool:
+def recherche_seq_while(v:int, t:list[int]) -> bool:
     i = 0
     while i < len(t):
-        i+=1
         if t[i]== v:
             return True
+        i+=1
     return False
 
-def comparaison(recherche1:bool,recherche2:bool) -> bool:
-    for x in t:
-        if recherche1 == recherche2:
-            return True
-        else:
-            return x
+def comparaison(t:list[int]) -> int:
+    for entier in range(0,1001):
+        resultat1 = recherche_seq_for(entier,t)
+        resultat2 = recherche_seq_while(entier,t)
+        if resultat1 != resultat2:
+            return entier
+    return 0
+        
+def recherche_seq_pos(v:int,t:list[int]) -> int:
+    p = 0
+    while p < len(t):
+        if t[p] == v:
+            return p
+        p = p+1
+    return -1
+
+def test_seq_pos(v:int,t:list[int]) -> bool:
+    p = recherche_seq_pos(v,t)
+    if t[p] == v:
+        return True
+    elif p == -1:
+        return True
+    else:
+        return False
+    
+def test_seq_all(v:int,t:list[int]) -> bool:
+    for v in t:
+        if test_seq_pos(v,t) == False:
+            return False
+    return True
