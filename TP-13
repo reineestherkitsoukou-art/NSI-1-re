@@ -2,7 +2,7 @@ from random import randint
 
 table_alea = [randint(0,1001) for _ in range(100)]
 
-def minimum(v:int,t:list[int]) -> int:
+def minimum(t:list[int]) -> int:
     mini = t[0]
     p = 1
     while p < len(t):
@@ -10,3 +10,40 @@ def minimum(v:int,t:list[int]) -> int:
             mini = t[p]
         p = p+1
     return mini
+
+def maximum(t:list[int]) -> int:
+    maxipos = 0
+    maxi = t[0]
+    p = 1
+    while p < len(t):
+        if t[p] > maxi:
+            maxipos = p
+            maxi = t[p]
+        p = p+1
+    return maxipos, maxi
+
+def etendu(t:list[int]) -> int:
+    max_t = maximum(t)[1]
+    min_t = minimum(t)
+    return max_t - min_t
+
+def somme(t:list[int]) -> int:
+    result = 0
+    for v in t:
+        result+=v
+    return result
+
+def moyenne(t:list[int]) -> float:
+    result = 0
+    for v in t:
+        result+=v
+    moy = result/len(t)
+    return moy
+
+def moyenne_sup(t:list[int],seuil):
+    somme = 0
+    for v in t:
+        while v > seuil:
+            somme+=v
+        return -1
+    return somme/len(t)
