@@ -1,0 +1,22 @@
+
+<html lang="fr"> 
+	<head>
+		<title>Formulaire de sondage</title>
+		<meta charset="urf-8">
+	</head>
+	<body>
+		<form action="traitement.php" method="POST">
+			<label for="Option 1" class="premiereoption" >Option 1 :</label>
+			<input type="text" class="premiereoption" name="Option 1"> <br> 
+			<label for="Option 2">Option 2 :</label>
+			<input type="text" name="Option 2"> <br> 
+			<label for="Option 3">Option 3 :</label>
+			<input type="text" name="Option3"> <br>
+			<label for="Option 4">Option 4 :</label>
+			<input type="text" name="Option 4"> <br>
+			<label for="Option 5">Option 5 :</label>
+			<input type="text" name="Option 5"> <br>
+			<button type="submit">Valider</button>
+		</form>	
+	</body>
+</html>
