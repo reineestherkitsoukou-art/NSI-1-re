@@ -9,18 +9,21 @@
 	</head>
 	<body>
 		<form action="traitement.php" method="POST">
-			<h1 id="titre">Sondage perso</h1> <br> 
-			<label for="Option 1" class="option1 label1" >Option 1 :</label> 
-			<input type="text" class="option1" name="Option 1"> <br> 
-			<label for="Option 2" class="option1 label1" >Option 2 :</label>
-			<input type="text" class="option1" name="Option 2"> <br> 
-			<label for="Option 3" class="option3" id="label3">Option 3 :</label>
-			<input type="text" class="option3" name="Option3"> <br>
-			<label for="Option 4" class="option4" id="label4">Option 4 :</label>
-			<input type="text" class="option4" name="Option 4"> <br>
-			<label for="Option 5" class="option5" id="label5">Option 5 :</label>
-			<input type="text" class="option5" name="Option 5"> <br>
-			<button type="submit">Valider</button>
+			<div id="option">
+				<h1 id="titre">Sondage perso</h1> <br> 
+				<label for="Option 1" class="option1 label1" >Option 1 :</label> 
+				<input type="text" class="option1" name="Option 1"> <br> 
+				<label for="Option 2" class="option1 label1" >Option 2 :</label>
+				<input type="text" class="option1" name="Option 2"> <br> 
+				<label for="Option 3" class="label" >Option 3 :</label>
+				<input type="text" class="option3" name="Option3"> <br>
+				<label for="Option 4" class="label" >Option 4 :</label>
+				<input type="text" class="option4" name="Option 4"> <br>
+				<label for="Option 5" class="option5" id="label5">Option 5 :</label>
+				<input type="text" class="option5" name="Option 5"> <br>
+			</div>
+			<button type="submit" id="ajouter">Ajouter une option</button> <br>
+			<button type="submit" >Valider</button>
 		</form>	
 	</body>
 </html>
