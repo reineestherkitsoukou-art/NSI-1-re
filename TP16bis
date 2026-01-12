@@ -1,0 +1,7 @@
+def echanger(t:list,i:int,j:int)-> list:
+    temp=t[i]
+    t[i]=t[j]
+    t[j]=temp
+    return t
+ 
+assert echanger([2,3,4,5],0,3)==[5,3,4,2]
