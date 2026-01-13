@@ -1,0 +1,25 @@
+let avion = 0;
+let x=0;
+let y=1;
+let coord1=
+[
+	[100,300],
+	[200,200]
+];
+
+point1 = document.getElementById("point1");
+point1.style.top = coord1[avion][1]+"px" ;
+
+<!DOCTYPE html>
+<html lang="fr"> 
+	<head>
+	<link rel="stylesheet" hrf="style.css">
+		<title>Avions</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<script src="coord_avion.js" defer></script>
+	</head>
+	<body>
+		<img style="position:relative;" src='point.png' alt='Point' width='20px' id = 'point1'>
+	</body>
+</html>
