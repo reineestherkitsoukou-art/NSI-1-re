@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 def echanger(t:list,i:int,j:int)-> list:
     temp=t[i]
     t[i]=t[j]
@@ -5,3 +7,42 @@ def echanger(t:list,i:int,j:int)-> list:
     return t
  
 assert echanger([2,3,4,5],0,3)==[5,3,4,2]
+
+def indice_mini_apres(t:list,i:int):
+    imin = i
+    for k in range(i+1,len(t)):
+        if t[k]<t[imin]:
+            imin = k
+    return imin
+assert indice_mini_apres([1,3,2,4],1) == 2
+
+def tri_selection(t:list):
+    for i in range(0,len(t)):
+        imin = indice_mini_apres(t,i)
+        echanger(t,i,imin)
+    return t
+
+assert tri_selection([1,3,8,10,2]) == [1,2,3,8,10]
+
+
+def table_to_str(mot_table:list[str]) -> str:
+    """Transforme un tableau de caractère en mot """
+    mot_str = ""
+    for c in mot_table:
+        mot_str += c
+    
+    return mot_str
+
+def trier_mot(mot:str) -> str:
+    """Renvoie une anagramme du mot mais avec les lettres dans
+    l'ordre alphabetique"""
+    
+    return table_to_str(tri_selection(list(mot)))
+
+def sont_anagrammes(mot:str, tom:str) -> bool:
+    return trier_mot(mot) == trier_mot(tom)
+    
+assert sont_anagrammes("mot","tom") == True
+assert sont_anagrammes("chien","niche") == True
+assert sont_anagrammes("non","oui") == False
+assert sont_anagrammes("v","f") == False
